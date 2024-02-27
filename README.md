@@ -1,7 +1,10 @@
 # Minesweeper-Project
-Recreation of the classic Minesweeper 💣 game using Java Swing with customizable board sizes.
+## Description
+The project is a recreation of the classic Minesweeper 💣 game using Java Swing with customizable board sizes.
+
+ This is a solo mini project done during free times for fun.
 ## Technical Details
-- Written using **IntelliJ Idea 2023.2 (Community Edition)**
+- Written using **IntelliJ Idea 2023.2 (Community Edition)**.
 - Java version used is **OpenJDK version 19.0.2**.
 - The GUI is implemented using **Java Swing**.
 ## Setup
