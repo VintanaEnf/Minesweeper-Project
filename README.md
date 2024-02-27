@@ -8,10 +8,25 @@ The project is a recreation of the classic Minesweeper 💣 game using Java Swin
 - Java version used is **OpenJDK version 19.0.2**.
 - The GUI is implemented using **Java Swing**.
 ## Setup
-- **Clone** the repository: ```git clone https://github.com/VintanaEnf/Minesweeper-Project```
-- **Open** the main.java file located at ```Minesweeper-Project/src/main.java```.
+- **Clone** the repository using the code below.
+
+```shell
+  git clone https://github.com/VintanaEnf/Minesweeper-Project
+```
+
+- **Open** the main.java file located at the path below.
+
+```shell
+  Minesweeper-Project/src/main.java
+```
+
 - Configure the number of **rows, columns, GUI size**, and **number of bombs** in the main function.
-- You could also try adding ```x.setEasterEgg(true);``` in the main function.
+- You could also try adding the code below in the main function.
+ 
+ ```java
+  x.setEasterEgg(true);
+```
+
 - Run the program. Enjoy.
 ## How to Play
 - Press **left-click** to reveal a square.
