@@ -1,5 +1,9 @@
 # Minesweeper-Project
 Recreation of the classic Minesweeper 💣 game using Java Swing with customizable board sizes.
+## Technical Details
+- Written using **IntelliJ Idea 2023.2 (Community Edition)**
+- Java version used is **OpenJDK version 19.0.2**.
+- The GUI is implemented using **Java Swing**.
 ## Setup
 - **Clone** the repository: ```git clone https://github.com/VintanaEnf/Minesweeper-Project```
 - **Open** the main.java file located at ```Minesweeper-Project/src/main.java```.
