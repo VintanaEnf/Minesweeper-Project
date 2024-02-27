@@ -1,8 +1,8 @@
 # Minesweeper-Project
 Recreation of the classic Minesweeper 💣 game using Java Swing with customizable board sizes.
 ## Setup
-- Clone the repository: ```git clone clone link here```
-- Open the main.java file located at ```location here```.
+- Clone the repository: ```git clone https://github.com/VintanaEnf/Minesweeper-Project```
+- Open the main.java file located at ```Minesweeper-Project/src/main.java```.
 - Configure the number of rows, columns, GUI size, and bomb size in the main function.
 - You could also try adding ```x.setEasterEgg(true);``` in the main function.
 - Run the program. Enjoy.
