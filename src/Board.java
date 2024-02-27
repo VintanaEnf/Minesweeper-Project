@@ -17,7 +17,7 @@ public class Board extends JFrame {
     public JButton[][] field;
     private JButton Smiley;
     public Minesweeper msw;
-    ImageIcon SmileyIMG, FlagIMG, BombIMG;
+    ImageIcon SmileyIMG, FlagIMG, BombIMG, deathIMG;
 
     public String WinMessage;
     Board(int Rows, int Cols, int ButtonSize, int BombNumber){
@@ -34,7 +34,7 @@ public class Board extends JFrame {
 
         innitFrame();
 
-        JLabel Score = new JLabel("Well done, comrade!");
+        JLabel Score = new JLabel("");
         Score.setBounds(20, 0, 200, 50);
         this.add(Score);
 
@@ -70,6 +70,7 @@ public class Board extends JFrame {
             SmileyIMG = new ImageIcon(getClass().getResource("images/Stalin.png"));
             FlagIMG = new ImageIcon(getClass().getResource("images/OurFlag.png"));
             BombIMG = new ImageIcon(getClass().getResource("images/Bomb.png"));
+            deathIMG = new ImageIcon(getClass().getResource("images/StalinDeath.png"));
             Smiley.setIcon(SmileyIMG);
             this.setTitle("\"OUR\" Minesweeper");
             WinMessage = "Congratulations Comrade!";
@@ -80,6 +81,7 @@ public class Board extends JFrame {
             SmileyIMG = new ImageIcon(getClass().getResource("images/Smiley.png"));
             FlagIMG = new ImageIcon(getClass().getResource("images/Flag.png"));
             BombIMG = new ImageIcon(getClass().getResource("images/Bomb.png"));
+            deathIMG = new ImageIcon(getClass().getResource("images/Death.png"));
             this.setTitle("Minesweeper");
             WinMessage = "You Won!";
         }
@@ -119,7 +121,9 @@ public class Board extends JFrame {
                             field[TRows][TCols].setText("");
                             field[TRows][TCols].setIcon(BombIMG);
                             System.out.println(field[TRows][TCols].getText());
+                            Smiley.setIcon(deathIMG);
                             JOptionPane.showMessageDialog(null, "Kaboom!");
+                            autoTouchAllDeath();
                         }
                         field[TRows][TCols].setEnabled(false);
                         autoTouchGUI();
@@ -160,6 +164,7 @@ public class Board extends JFrame {
         Smiley.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("New Game!");
+                Smiley.setIcon(SmileyIMG);
                 innitGame(BombNumber);
             }
         });
@@ -204,4 +209,17 @@ public class Board extends JFrame {
         }
     }
 
+    private void autoTouchAllDeath(){
+        for (int i = 0; i < this.Rows; i++) {
+            for (int j = 0; j < this.Cols; j++) {
+                    field[i][j].setText(msw.getBoardAt(i, j)+"");
+                    field[i][j].setEnabled(false);
+                if(msw.getBoardAt(i, j) == 9){
+                    field[i][j].setText("");
+                    field[i][j].setIcon(BombIMG);
+            }
+        }
+    }
 }
+}
+
