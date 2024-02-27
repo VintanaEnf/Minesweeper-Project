@@ -13,13 +13,14 @@ public class Board extends JFrame {
     public int Cols;
     public int Rows;
     public int ButtonSize;
+    public int BombNumber;
     public JButton[][] field;
     private JButton Smiley;
     public Minesweeper msw;
     ImageIcon SmileyIMG, FlagIMG, BombIMG;
 
     public String WinMessage;
-    Board(int Rows, int Cols, int ButtonSize){
+    Board(int Rows, int Cols, int ButtonSize, int BombNumber){
 
         innitGuiTheme();
         setEasterEgg(false);
@@ -28,6 +29,7 @@ public class Board extends JFrame {
         this.Cols = Cols;
         this.Rows = Rows;
         this.ButtonSize = ButtonSize;
+        this.BombNumber = BombNumber;
         field = new JButton[Rows][Cols];
 
         innitFrame();
@@ -38,12 +40,12 @@ public class Board extends JFrame {
 
         innitField();
         innitSmiley();
-        innitGame();
+        innitGame(this.BombNumber);
     }
 
-    private void innitGame(){
+    private void innitGame(int BombNumber){
         reprintButtons();
-        msw = new Minesweeper(this.Rows, this.Cols, 5);
+        msw = new Minesweeper(this.Rows, this.Cols, BombNumber);
         for (int i = 0; i < this.Rows; i++) {
             for (int j = 0; j < this.Cols; j++) {
                 field[i][j].setText("");
@@ -117,6 +119,7 @@ public class Board extends JFrame {
                             field[TRows][TCols].setText("");
                             field[TRows][TCols].setIcon(BombIMG);
                             System.out.println(field[TRows][TCols].getText());
+                            JOptionPane.showMessageDialog(null, "Kaboom!");
                         }
                         field[TRows][TCols].setEnabled(false);
                         autoTouchGUI();
@@ -157,7 +160,7 @@ public class Board extends JFrame {
         Smiley.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("New Game!");
-                innitGame();
+                innitGame(BombNumber);
             }
         });
     }
