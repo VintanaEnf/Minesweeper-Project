@@ -23,4 +23,6 @@ The project is a recreation of the classic Minesweeper 💣 game using Java Swin
 <img src="https://github.com/VintanaEnf/Minesweeper-Project/assets/104513214/a5bb07a3-bf69-4592-a931-7fc44291944f" width="500" height="600" />
 <img src="https://github.com/VintanaEnf/Minesweeper-Project/assets/104513214/574d6759-5dcf-4bbc-b384-48e96c834d1a" width="500" height="600" />
 <img src="https://github.com/VintanaEnf/Minesweeper-Project/assets/104513214/545d2efc-6bf5-4ed5-920d-ffbb20b13134" width="500" height="600" />
+<img src="https://github.com/VintanaEnf/Minesweeper-Project/assets/104513214/4f4a64d3-e5dc-4f42-96c9-c7df8f8d3ed2" width="500" height="600" />
+
 
